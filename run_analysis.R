@@ -30,7 +30,7 @@ TrainSet <- merge(activityLabel, TrainSet, by.x="activitycode", by.y="activityco
 # Combine the test and training datasets
 Dataset <- rbind(TestSet, TrainSet)
 
-# Finally using reshape2 package to get the final tiday dataset
+# Finally using reshape2 package to get the final tidy dataset for the project
 dt <- melt(Dataset, id.vars=c("subject","activitycode","activityname"))
 dt1 <- dcast(dt, subject + activityname ~ variable, mean)
 write.csv(dt1, "tidydata.txt", row.names=FALSE)  
