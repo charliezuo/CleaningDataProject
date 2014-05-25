@@ -9,11 +9,11 @@ The run_analysis.r file provides the R script that performs all the tasks in get
 
 Note the script perform for the same tasks separately for test and train data, then merge the two datasets together to ensure the code can work on small datasets firs to save development time, so would not have to perform task on much larger datasets constantly. 
 
-In the first part of the script, the script reads both the Test (test.txt) and Training (train.text) data into R. Since these files do not have headers, then it loads "features.txt" into R as a data frame to be the headers for the raw datasets. Then script reads in activity_label, activity code and subject files for us to combine the raw data files together later on. In the next step, it started subsetting data, and cleaning the headers on the raw datasets based on the definition of tidy data mentioned in Prof Leek's lectures. And merge the activity_label, subject, and test data together to create a data frame TestSet.
+In the first part of the script, the script reads both the Test (test.txt) and Training (train.text) data into R. Since these files do not have headers, then it loads "features.txt" into R as a data frame to be the headers for the raw datasets. Then script reads in activity_label, activity code and subject files for us to combine the raw data files together later on. In the next step, it started subsetting data, and cleaning the headers on the raw datasets based on the definition of tidy data mentioned in Prof. Leek's lectures. After that it merges the activity_label, subject and test data together to create a data frame TestSet.
 
-The script did the same steps above on the training data, to generate a data frame TrainSet. After that, rbind() function was used to combine the test and train data together. 
+The script did the same steps above on the training dataset, to generate a data frame TrainSet. After that, rbind() function was used to combine the test and train data together. 
 
-In the last steps to calculate average of each variables for each subject and activity, melt and dcast functions inn reshape2 package was used to reshape and summarize data to generate the final tidy dataset, then writes it to the disk as "tidydata.txt".
+In the last steps, it calculates the average of each variable for each subject and activity, it used melt and dcast functions in reshape2 package to reshape and summarize data to generate the final tidy dataset, then writes it to the disk as "tidydata.txt".
 
 
 
